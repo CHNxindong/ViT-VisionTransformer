@@ -9,7 +9,7 @@ I trained the model of **ViT (Vision Transformer)** using CIFAR10 and CIFAR100 d
 #### a) CIFAR10
 | Model | Top 1 Accuracy (%) | Top 5 Accuracy (%) |
 |:---:|:---:|:---:|
-| ViT | 58.34 | 95.61 |
+| ViT | 59.30 | 95.36 |
 | ResNet34 | 81.45 | 98.69 |
 | EfficientNet B0 | 76.90 | 98.13 |
 
@@ -20,9 +20,9 @@ Low accuracy should not matter, as the original paper trained the model using Im
 #### a) CIFAR10
 | Model | Accuracy | Loss |
 |:---:|:---:|:---:|
-| ViT | <img src = './results/plots/VisionTransformer Accuracy on CIFAR 10 Dataset.png' width=600> | <img src = './results/plots/VisionTransformer Loss on CIFAR 10 Dataset.png' width=600>
-| ResNet34 | <img src = './results/plots/ResNet Accuracy on CIFAR 10 Dataset.png' width=600> | <img src = './results/plots/ResNet Loss on CIFAR 10 Dataset.png' width=600>
-| EfficientNet B0 | <img src = './results/plots/EfficientNet Accuracy on CIFAR 10 Dataset.png' width=600> | <img src = './results/plots/EfficientNet Loss on CIFAR 10 Dataset.png' width=600>
+| ViT | <img src = './results/plots/VisionTransformer Accuracy on CIFAR 10 Dataset.png'> | <img src = './results/plots/VisionTransformer Loss on CIFAR 10 Dataset.png'> |
+| ResNet34 | <img src = './results/plots/ResNet Accuracy on CIFAR 10 Dataset.png'> | <img src = './results/plots/ResNet Loss on CIFAR 10 Dataset.png'> |
+| EfficientNet B0 | <img src = './results/plots/EfficientNet Accuracy on CIFAR 10 Dataset.png'> | <img src = './results/plots/EfficientNet Loss on CIFAR 10 Dataset.png'> |
 
 
 ### 2. Run the Codes
