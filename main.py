@@ -188,8 +188,12 @@ def main(config):
         criterion = nn.CrossEntropyLoss()
 
         # Optimizers #
-        optimizer = torch.optim.Adam(model.parameters(), lr=config.lr, betas=(0.5, 0.999))
-        optimizer_scheduler = get_lr_scheduler(config.lr_scheduler, optimizer)
+        if config.num_classes == 10:
+            optimizer = torch.optim.Adam(model.parameters(), lr=config.lr, betas=(0.5, 0.999))
+            optimizer_scheduler = get_lr_scheduler(config.lr_scheduler, optimizer)
+        elif config.num_classes == 100:
+            optimizer = torch.optim.SGD(model.parameters(), lr=config.lr, momentum=0.9, weight_decay=5e-4)
+            optimizer_scheduler = get_lr_scheduler('step', optimizer)
 
         # Constants #
         best_top1_acc = 0
@@ -257,7 +261,6 @@ if __name__ == "__main__":
     parser.add_argument('--dataset', type=str, default='cifar', help='which dataset to train')
     parser.add_argument('--num_classes', type=int, default=10, help='num_classes for cifar dataset', choices=[10, 100])
     parser.add_argument('--batch_size', type=int, default=64, help='mini-batch size')
-    parser.add_argument('--val_batch_size', type=int, default=32, help='mini-batch size for validation')
 
     parser.add_argument('--model', type=str, default='vit', help='which model to train for benchmarking', choices=['vit', 'efficient', 'resnet'])
     parser.add_argument('--init', type=str, default='he', help='which initialization technique to apply', choices=['normal', 'xavier', 'he'])
@@ -275,7 +278,6 @@ if __name__ == "__main__":
 
     parser.add_argument('--num_epochs', type=int, default=40, help='total epoch')
     parser.add_argument('--print_every', type=int, default=100, help='print statistics for every n iteration')
-    parser.add_argument('--save_every', type=int, default=5, help='save model weights for every n epoch')
 
     parser.add_argument('--phase', type=str, default='train', choices=['train', 'test'])
 
