@@ -1,10 +1,12 @@
 # ViT-VisionTransformer
 
+### 0. Overview
+
 This repository contains a simple **unofficial** implementation of **[An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale](https://arxiv.org/abs/2010.11929)** using PyTorch. 
 
-I trained the model of **ViT (Vision Transformer)** using CIFAR10 and CIFAR100 dataset and compared the result using **ResNet34** and **EfficientNet B0**.
+**ViT (Vision Transformer)** is trained using CIFAR10 and CIFAR100 dataset and its performance is compared with **ResNet34** and **EfficientNet B0**.
 
-### 0. Accuracy
+### 1. Accuracy
 
 #### a) CIFAR10
 | Model | Top 1 Accuracy (%) | Top 5 Accuracy (%) |
@@ -13,9 +15,9 @@ I trained the model of **ViT (Vision Transformer)** using CIFAR10 and CIFAR100 d
 | ResNet34 | 81.45 | 98.69 |
 | EfficientNet B0 | 76.90 | 98.13 |
 
-Low accuracy should not matter, as the original paper trained the model using ImageNet initially and fine-tuned the model on CIFAR10 dataset. I just trained the model using CIFAR10 from scratch, thus the accuracy should be lower than the original paper.
+Low accuracy should not matter, as the original paper stated that they trained the model using ImageNet initially and fine-tuned the model on the CIFAR10 dataset. Here, the model is trained using CIFAR10 from scratch, thus the accuracy should be lower than the original paper.
 
-### 1. Loss and Accuracy during Training
+### 2. Loss and Accuracy during Training
 
 #### a) CIFAR10
 | Model | Accuracy | Loss |
@@ -25,8 +27,7 @@ Low accuracy should not matter, as the original paper trained the model using Im
 | EfficientNet B0 | <img src = './results/plots/EfficientNet Accuracy on CIFAR 10 Dataset.png'> | <img src = './results/plots/EfficientNet Loss on CIFAR 10 Dataset.png'> |
 
 
-### 2. Run the Codes
-
+### 3. Run the Codes
 The default is set to train *ViT*. It will automatically plot the loss and accuracy during train and yield results. If you want to train *ResNet*, 
 
 #### 1) Train 
@@ -40,7 +41,6 @@ python main.py --model 'resnet' --phase 'test'
 ```
 
 To handle more arguments, please refer to `main.py`
-
 
 
 ### Development Environment
